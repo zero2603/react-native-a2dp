@@ -44,7 +44,7 @@ class BluetoothService extends Thread {
             connectMethod.invoke(mA2dp, mmDevice);
         } catch (Exception e) {
             e.printStackTrace();
-            // promise.reject("连接错误");
+            promise.reject("连接错误");
         }
     }
 

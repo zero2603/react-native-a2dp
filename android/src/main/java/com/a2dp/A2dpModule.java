@@ -56,7 +56,7 @@ public class A2dpModule extends ReactContextBaseJavaModule {
         if (bluetooth != null) {
             bluetooth.connectA2dp(id,promise);
         }else{
-            // promise.reject("初始化错误");
+            promise.reject("初始化错误");
         };
     }
     /**

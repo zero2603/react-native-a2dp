@@ -100,7 +100,7 @@ public class Bluetooth {
             if(BluetoothA2dp.ACTION_CONNECTION_STATE_CHANGED.equals(action)){//蓝牙连接成功
                 int currentState= intent.getIntExtra(BluetoothA2dp.EXTRA_STATE, -1);//当前状态
                 if(currentState == BluetoothA2dp.STATE_CONNECTED) {//连接成功
-                    connectPromise.resolve("A2dp连接成功");
+                    // connectPromise.resolve("A2dp连接成功");
                     A2dpModule.sendEvent("connectSucceeded", "");
                 }
                 if(currentState == BluetoothA2dp.STATE_DISCONNECTED){//断开连接
@@ -112,7 +112,7 @@ public class Bluetooth {
             if(BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)){//配对状态
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 if(device.getBondState()==BluetoothDevice.BOND_NONE){//取消配对/未配对
-                    // connectPromise.reject("配对失败");
+                    connectPromise.reject("配对失败");
                 }
             }
         }
