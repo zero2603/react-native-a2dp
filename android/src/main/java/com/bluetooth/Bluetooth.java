@@ -105,14 +105,14 @@ public class Bluetooth {
                 }
                 if(currentState == BluetoothA2dp.STATE_DISCONNECTED){//断开连接
                     A2dpModule.sendEvent("connectDisconnect", "");
-                    connectPromise.reject("连接失败");
+                    // connectPromise.reject("连接失败");
                 }
             }
 
             if(BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)){//配对状态
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 if(device.getBondState()==BluetoothDevice.BOND_NONE){//取消配对/未配对
-                    connectPromise.reject("配对失败");
+                    // connectPromise.reject("配对失败");
                 }
             }
         }
