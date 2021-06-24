@@ -63,7 +63,7 @@ public class Bluetooth {
                 boolean isok=bluetoothService.createBond(device);
                 bluetoothService.connectA2dp(device,promise);
             }else {
-                promise.reject("找不到设备");
+                // promise.reject("找不到设备");
             }
         }
     }
