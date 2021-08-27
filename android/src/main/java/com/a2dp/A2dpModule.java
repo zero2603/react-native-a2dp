@@ -76,6 +76,8 @@ public class A2dpModule extends ReactContextBaseJavaModule {
      */
     @ReactMethod
     public void startBluetoothSco(Promise promise) {
+        mAudioManager.setMode(AudioManager.MODE_IN_CALL);
+        mAudioManager.setSpeakerphoneOn(false);
         mAudioManager.setBluetoothScoOn(true);
         mAudioManager.startBluetoothSco();
         promise.resolve(true);
